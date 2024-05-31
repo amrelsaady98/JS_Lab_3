@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome</title>
+</head>
+<body>
+<h1 id="welcome-message"></h1>
+<script>
+  // get user's name from url
+  console.log(window.location.search);
+  let userName = new URLSearchParams(window.location.search).get('user-name');
+  console.log(userName)
+  document.getElementById("welcome-message").innerText = "Welcome Mr. " + userName;
+</script>
+</body>
+</html>
