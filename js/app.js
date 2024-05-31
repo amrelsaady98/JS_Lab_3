@@ -84,6 +84,23 @@ document.getElementById("start-scroll-button").addEventListener('click', functio
 
 //task #05 ------------------------------------------------------
 
-let text = "hello world! hello there";
-let regExp = /hello/g;
-console.log(text.match(regExp));
+const nameRegExp = /^[A-Z][A-Za-z]{2,}\s[A-Z][A-Za-z]{2,}$/;
+const emailRegExp = /^[A-Za-z0-9._#${|}\$]{2,}@[a-z0-9.-]+(\.[a-z0-9\.-]+)*.eg$/;
+let validateBtn = document.getElementById("data-validation-btn");
+let nameInput = document.getElementById("user-name-2");
+let emailInput = document.getElementById("email");
+
+
+validateBtn.addEventListener("click", function () {
+  if(nameRegExp.exec(nameInput.value)){
+    nameInput.style.border = "2px solid green";
+  }else{
+    nameInput.style.border = "2px solid red";
+  }
+  if(emailRegExp.exec(emailInput.value)){
+    emailInput.style.border = "2px solid green";
+  } else {
+    emailInput.style.border = "2px solid red";
+  }
+})
+
